@@ -106,8 +106,9 @@ cartservice pod
 ```
 Microservices (pods) talk to each other using gRPC or HTTP
 
-
-
+Kubernetes Services (ClusterIP) help them FIND each other
+They are two different things with the same confusing word
+```
 
 
 
@@ -118,9 +119,3 @@ Microservices (pods) talk to each other using gRPC or HTTP
 
 
 <img width="626" height="659" alt="image" src="https://github.com/user-attachments/assets/d277f8be-b064-4fce-a90f-aa404645d0cb" />
-
-
-Kubernetes Services (ClusterIP) help them FIND each other
-They are two different things with the same confusing word
-```
-
