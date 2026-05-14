@@ -13,6 +13,7 @@
 
 
 
+
 ## **Module 2: Kubernetes Cluster Setup on AWS EKS** 
 
 2.1 What is EKS and why AWS?
@@ -22,6 +23,7 @@
 2.3 Creating a 2-node EKS cluster using `eksctl` with standard disk (gp2)
 
 2.4 Verifying the cluster — nodes, namespaces, context
+
 
 
 
@@ -37,6 +39,7 @@
 
 
 
+
 ## **Module 4: Deploy a Microservice Application** 
 
 4.1 What is a microservice? (vs monolith — key differences)
@@ -48,6 +51,7 @@
 4.4 Exposing the app via **Ingress** (with NGINX Ingress Controller)
 
 4.5 Testing the app — hit the endpoints
+
 
 
 
@@ -68,6 +72,7 @@
 
 
 
+
 ## **Module 6: Prometheus — Concepts** 
 
 6.1 What is Prometheus?
@@ -79,6 +84,7 @@
 6.4 PromQL basics — the query language
 
 6.5 What are metrics types? (Counter, Gauge, Histogram, Summary)
+
 
 
 
@@ -96,6 +102,7 @@
 
 
 
+
 ## **Module 8: Connect Prometheus to Our Microservice** 
 
 8.1 What is a ServiceMonitor?
@@ -110,6 +117,7 @@
 
 
 
+
 ## **Module 9: Grafana Dashboards** 
 
 9.1 Grafana already comes with kube-prometheus-stack!
@@ -119,6 +127,7 @@
 9.3 Exploring built-in dashboards (Node, Pod, Cluster)
 
 9.4 Importing a dashboard for our microservice
+
 
 
 
