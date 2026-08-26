@@ -1,6 +1,8 @@
-# LAB 3 — Running Pods per Namespace
+## LAB 3 — Running Pods per Namespace
 
 ### Step 1 — Add visualization
+
+In `Node Overview`:
 
 **Add → Visualization**
 
@@ -12,13 +14,15 @@ Prometheus
 
 ### Step 2 — PromQL
 
-Use:
+Use the correct metric for pod phase:
 
 ```promql
 count by (namespace) (
-  kube_pod_info{phase="Running"}
+  kube_pod_status_phase{phase="Running"} == 1
 )
 ```
+
+This specifically counts pods whose current phase is `Running`.
 
 ### Step 3 — Visualization
 
@@ -30,17 +34,19 @@ Bar chart
 
 ### Step 4 — Panel settings
 
-**Title**
+**Title:**
 
 ```text
 Running Pods by Namespace
 ```
 
-**X-axis**
+**X-axis:**
 
-Use the `namespace` label.
+```text
+namespace
+```
 
-**Legend**
+**Legend:**
 
 ```text
 Hidden
@@ -50,28 +56,32 @@ Hidden
 
 Click **Apply**.
 
-You should see bars for namespaces such as:
+You should see namespaces such as:
 
 ```text
+kube-system
 monitoring
 online-boutique
-kube-system
 ```
+
+with the number of Running pods in each.
 
 ### Teaching point
 
-This is a good place to explain:
+This is a useful PromQL lesson:
 
 ```text
-kube_pod_info
-      ↓
-one series per pod
-      ↓
+kube_pod_status_phase
+        ↓
+phase="Running"
+        ↓
+== 1
+        ↓
 count by (namespace)
-      ↓
-number of pods in each namespace
 ```
 
-So **`count by (namespace)` is the PromQL aggregation**, while Grafana's Bar chart is only responsible for visualizing the result.
+`kube_pod_info` tells us **information about the pod**, but it doesn't have the `phase` label we initially assumed.
 
-Once this is working, we'll move to **LAB 4 — Pod Restart Count (Stat)**.
+`kube_pod_status_phase` is the correct metric when we specifically want to filter by pod phase.
+
+**Lab 3 complete once the bar chart shows the namespace counts.**
